@@ -1,9 +1,18 @@
 def main():
-    with open("books/frankenstein.txt") as f:
-        cont =f.read()
-    l=[]
-    l=cont.split()
-    c=len(l)
-    print(c)    
+    bpath = "books/frankenstein.txt"
+    text = gettext(bpath)
+    numw = cwords(text)
+    print(f"{numw} words found in the document")
+
+
+def cwords(text):
+    words = text.split()
+    return len(words)
+
+
+def gettext(path):
+    with open(path) as f:
+        return f.read()
+
 
 main()
